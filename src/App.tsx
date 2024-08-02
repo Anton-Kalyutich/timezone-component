@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles.css';
+import LanguageSelectionComponent from './LanguageSelectionComponent';
 
-function App() {
+const App: React.FC = () => {
+  const items: { [key: string]: string } = {
+    "en-US": "America/New_York",
+    "en-GB": "Europe/London",
+    "pt-BR": "America/Sao_Paulo",
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <LanguageSelectionComponent items={items} />
     </div>
   );
 }
